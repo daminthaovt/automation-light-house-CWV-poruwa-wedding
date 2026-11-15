@@ -1,7 +1,7 @@
 name: Weekly Lighthouse Audit
 on:
   schedule:
-    - cron: "30 3 * * 6"
+    - cron: '0 11 * * 5' # Runs every Friday at 11:00 UTC (4:30 PM Sri Lanka Time)
   workflow_dispatch:
 
 jobs:
