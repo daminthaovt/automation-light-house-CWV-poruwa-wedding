@@ -12,11 +12,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Install Chrome Stable
+      - name: Install Latest Chrome Stable
         run: |
           wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --batch --yes --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg > /dev/null
           echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update && sudo apt-get install -y google-chrome-stable
+          sudo apt-get update && sudo apt-get install -y --only-upgrade google-chrome-stable
       - run: npm install
       - name: Run Lighthouse & Update Sheet
         env:
