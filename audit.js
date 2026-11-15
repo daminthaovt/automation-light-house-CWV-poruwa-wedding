@@ -4,7 +4,7 @@ import { google } from "googleapis";
 
 const TARGET_URL = "https://weddings.poruwa.lk/";
 const SPREADSHEET_ID = process.env.LIGHTHOUSE_SHEET_ID;
-const TAB_NAME = "Lighthouse"; // <-- Replace with your exact Lighthouse tab name
+const TAB_NAME = "Lighthouse Audit Points - Porwua Wedding";
 const NUM_COLS = 14; // Columns A through N (Application -> Agentic Browsing)
 
 async function runAudit() {
