@@ -102,24 +102,24 @@ async function runAudit() {
   const bannerRowIndex = lastRowBefore; // 0-based index for batchUpdate
   const dataRowIndex = lastRowBefore + 1; // 0-based index for batchUpdate
 
-  const rows = [
+const rows = [
     [bannerText],
     [
-      "Poruwa Wedding",
-      "Landing Page",
-      "Production",
-      "Google Lighthouse",
-      audits["largest-contentful-paint"].displayValue,
-      audits["first-contentful-paint"].displayValue,
-      audits["total-blocking-time"].displayValue,
-      audits["cumulative-layout-shift"].displayValue,
-      audits["speed-index"].displayValue,
-      Math.round(categories.performance.score * 100),
-      Math.round(categories.accessibility.score * 100),
-      Math.round(categories["best-practices"].score * 100),
-      Math.round(categories.seo.score * 100),
-      agenticFraction,
-    ],
+      'Poruwa Wedding',
+      'Landing Page',
+      'Production',
+      'Google Lighthouse',
+      audits['largest-contentful-paint'].displayValue,
+      audits['first-contentful-paint'].displayValue,
+      audits['total-blocking-time'].displayValue,
+      audits['cumulative-layout-shift'].displayValue,
+      audits['speed-index'].displayValue,
+      `${Math.round(categories.performance.score * 100)}%`,
+      `${Math.round(categories.accessibility.score * 100)}%`,
+      `${Math.round(categories['best-practices'].score * 100)}%`,
+      `${Math.round(categories.seo.score * 100)}%`,
+      agenticFraction
+    ]
   ];
 
   await sheets.spreadsheets.values.append({
